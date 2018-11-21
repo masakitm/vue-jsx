@@ -1,12 +1,11 @@
 <script>
-import Todo from './Todo.js'
+import Todo from './TodoContainer'
 
 export default {
   components: { Todo },
   render(h) {
     return (
       <div class="asdf">
-        this is App
         <Todo />
       </div>
     )
