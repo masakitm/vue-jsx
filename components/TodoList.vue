@@ -1,5 +1,10 @@
 <script>
+import TodoInput from './TodoInput'
+
 export default {
+  components: {
+    TodoInput
+  },
   props: {
     todoData: {
       type: Array,
@@ -9,6 +14,8 @@ export default {
   render(h) {
     return (
       <div>
+        <TodoInput />
+
         {this.todoData.length > 0 && (
           <div>
             items found
