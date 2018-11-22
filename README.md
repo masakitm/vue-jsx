@@ -48,7 +48,9 @@ vue で jsx を使うパッケージが最初から同梱されているため�
 </template>
 ```
 
-```js components/TodoView.vue
+```js
+components/TodoView.vue
+
 <script>
 export default {
   render(h) {
@@ -63,7 +65,9 @@ render 関数を使って div 要素を return することで、template 記法
 
 複数行書く場合は jsx 部分を `()` で囲みます
 
-```js components/TodoView.vue
+```js
+components/TodoView.vue
+
 <script>
 export default {
   render(h) {
@@ -105,7 +109,9 @@ export default {
 <template>
 ```
 
-```js components/TodoView.vue
+```js
+components / TodoView.vue
+
 export default {
   render(h) {
     return (
@@ -142,7 +148,9 @@ data や methods は全部 TodoContainer.js に持たせ、残りは props を�
 
 先ほど作った `TodoView.vue` を読み込み、props を付与して render で返すだけの `.js` コンポーネントを作ります
 
-```js components/TodoContainer.js
+```js
+components / TodoContainer.js
+
 import TodoView from './TodoView'
 
 export default {
@@ -159,7 +167,9 @@ export default {
 
 `TodoView` 側も props を受け取れるようにしておきましょう
 
-```js components/TodoView.vue
+```js
+components / TodoView.vue
+
 export default {
   props: {
     todoData: {
@@ -185,7 +195,9 @@ Todo アプリの挙動を考えます
 今回は `$emit` も使わず親 > 子のみのフローとします  
 `data`, `methods` は全て `TodoContainer` に書いて `TodoView` へ `props` として渡します
 
-```js components/TodoContainer.js
+```js
+components / TodoContainer.js
+
 import TodoView from './TodoView'
 
 let id = 0
@@ -225,7 +237,9 @@ export default {
 
 入力部分のフォームを作ります
 
-```js components/TodoView.vue
+```js
+components/TodoView.vue
+
 render(h) {
   return (
     <div>
@@ -243,7 +257,9 @@ render(h) {
 `props` で受け取った関数をイベント検知して叩きます  
 `onSubmit`、`onKeyup`と属性をベタ書きして見えますが、実際の html 出力時に属性としては残りません
 
-```js components/TodoView.vue
+```js
+components / TodoView.vue
+
 export default {
   props: {
     todoData: {
@@ -288,7 +304,9 @@ Todo 部分の view を作ります
 
 `todoData`をループして各要素ごとに`<div>{ name }</div>`を返すことで、`v-for`と同様の挙動を再現することができます
 
-```js components/TodoView.vue
+```js
+components/TodoView.vue
+
 render(h) {
   return (
     <div>
@@ -312,7 +330,8 @@ render(h) {
 
 ### おしまい
 
-これでごく基本的な説明は終了です。
-責務ごとにコンポーネントを分けたり、`<style>`で css をつけたり、todo の 削除機能などは通常の vue.js 同様に試してみてください。
+これでごく基本的な説明は終了です  
+責務ごとにコンポーネントを分けたり、`<style>`で css をつけたり、todo の 削除機能などは通常の vue.js 同様に試してみてください
 
-今回作成した内容は下記リポジトリへアップしています、
+今回作成した内容は下記リポジトリへアップしています
+https://github.com/masakitm/vue-jsx
