@@ -32,7 +32,7 @@ Nuxt.js でチャチャっと環境を用意します
 
 ```html
 <template>
-	<div>Todo</div>
+  <div>Todo</div>
 </template>
 ```
 
@@ -56,10 +56,10 @@ template 記法に近い感覚で div を返すコンポーネントができま
 export default {
   render(h) {
     return (
-			<div>
-				<h1>Todo</h1>
-			</div>
-		)
+      <div>
+        <h1>Todo</h1>
+      </div>
+    )
   }
 }
 </script>
@@ -73,7 +73,7 @@ css module などを導入することで可能になります
 
 ### v-if での出し分けを jsx で実装してみる
 
-`v-if` を使うところを
+`v-if` を `jsx` で実装してみましょう
 
 ### ビジネスロジックと view を分離してみる
 
