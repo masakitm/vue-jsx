@@ -235,12 +235,12 @@ export default {
 components/TodoView.vue
 
 <div>
-	<form>
-		<input />
-		<button type="submit">ADD</button>
-	</form>
+  <form>
+    <input />
+    <button type="submit">ADD</button>
+  </form>
 
-	{/* 略 */}
+  {/* 略 */}
 </div>
 ```
 
