@@ -1,4 +1,4 @@
-import TodoList from './TodoList'
+import TodoView from './TodoView'
 
 const initState = {
   tempText: '',
@@ -9,7 +9,7 @@ let id = 0
 export default {
   data() {
     return {
-      tempText: { ...initState.tempText },
+      tempText: initState.tempText,
       todoData: [...initState.todoData]
     }
   },
@@ -33,7 +33,7 @@ export default {
   },
   render() {
     return (
-      <TodoList
+      <TodoView
         todoData={this.todoData}
         handleInput={this.updateTempText}
         handleSubmit={this.addItem}

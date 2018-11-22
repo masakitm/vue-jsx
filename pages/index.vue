@@ -1,17 +1,10 @@
 <script>
-import App from '~/components/App.vue'
+import Todo from '~/components/TodoContainer'
 
 export default {
-  components: {
-    App
-  },
+  components: { Todo },
   render(h) {
-    return (
-      <section>
-        <h1>vue + jsx</h1>
-        <App />
-      </section>
-    )
+    return <Todo />
   }
 }
 </script>
