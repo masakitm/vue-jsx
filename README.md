@@ -73,11 +73,11 @@ render 関数を使って div 要素を return することで、template 記法
 components/TodoView.vue
 
 render(h) {
-	return (
-		<div>
-			<h1>Todo</h1>
-		</div>
-	)
+  return (
+    <div>
+      <h1>Todo</h1>
+    </div>
+  )
 }
 ```
 
@@ -113,17 +113,17 @@ render(h) {
 components / TodoView.vue
 
 render(h) {
-	return (
-		<div>
-			{this.todoData.length > 0 && (
-				<div>
-					<div>item found</div>
-				</div>
-			)}
+  return (
+    <div>
+      {this.todoData.length > 0 && (
+        <div>
+          <div>item found</div>
+        </div>
+      )}
 
-			{this.todoData.length === 0 && <div>no item found</div>}
-		</div>
-	)
+      {this.todoData.length === 0 && <div>no item found</div>}
+    </div>
+  )
 }
 ```
 
@@ -169,13 +169,13 @@ export default {
 components / TodoView.vue
 
 props: {
-	todoData: {
-		type: Array,
-		default: () => []
-	}
+  todoData: {
+    type: Array,
+    default: () => []
+  }
 },
 render(h) {
-	return <div>{/* 略 */}</div>
+  return <div>{/* 略 */}</div>
 }
 ```
 
@@ -257,35 +257,35 @@ render(h) {
 components / TodoView.vue
 
 props: {
-	todoData: {
-		type: Array,
-		default: () => []
-	},
-	handleInput: {
-		type: Function,
-		default: () => {}
-	},
-	handleSubmit: {
-		type: Function,
-		default: () => {}
-	}
+  todoData: {
+    type: Array,
+    default: () => []
+  },
+  handleInput: {
+    type: Function,
+    default: () => {}
+  },
+  handleSubmit: {
+    type: Function,
+    default: () => {}
+  }
 },
 render(h) {
-	return (
-		<div>
-			<form
-				onSubmit={e => {
-					e.preventDefault()
-					this.handleSubmit()
-				}}
-			>
-				<input onKeyup={e => this.handleInput(e.target.value)} />
-				<button type="submit">ADD</button>
-			</form>
+  return (
+    <div>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          this.handleSubmit()
+        }}
+      >
+        <input onKeyup={e => this.handleInput(e.target.value)} />
+        <button type="submit">ADD</button>
+      </form>
 
-			{/* 略 */}
-		</div>
-	)
+      {/* 略 */}
+    </div>
+  )
 }
 ```
 
