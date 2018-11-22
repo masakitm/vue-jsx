@@ -9,17 +9,29 @@ export default {
     todoData: {
       type: Array,
       default: () => []
+    },
+    handleInput: {
+      type: Function,
+      default: () => null
+    },
+    handleSubmit: {
+      type: Function,
+      default: () => null
     }
   },
   render(h) {
     return (
       <div>
-        <TodoInput />
+        {
+          <TodoInput
+            handleInput={this.handleInput}
+            handleSubmit={this.handleSubmit}
+          />
+        }
 
         {this.todoData.length > 0 && (
           <div>
-            items found
-            <div>list item</div>
+            <div>item found</div>
           </div>
         )}
 

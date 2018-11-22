@@ -1,16 +1,43 @@
 import TodoList from './TodoList'
 
 const initState = {
+  tempText: '',
   todoData: []
 }
+let id = 0
 
 export default {
   data() {
     return {
-      todoData: { ...initState.todoData }
+      tempText: { ...initState.tempText },
+      todoData: [...initState.todoData]
     }
   },
-  render(h) {
-    return <TodoList todoData={initState.todoData} />
+  computed: {
+    todoItemCount() {
+      return this.todoData.length
+    }
+  },
+  methods: {
+    updateTempText(text) {
+      this.tempText = text
+    },
+    addItem() {
+      const newItem = {
+        id: id++,
+        name: this.tempText,
+        done: false
+      }
+      this.todoData = this.todoData.concat(newItem)
+    }
+  },
+  render() {
+    return (
+      <TodoList
+        todoData={this.todoData}
+        handleInput={this.updateTempText}
+        handleSubmit={this.addItem}
+      />
+    )
   }
 }
