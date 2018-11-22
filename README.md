@@ -174,9 +174,6 @@ props: {
     default: () => []
   }
 },
-render(h) {
-  return <div>{/* 略 */}</div>
-}
 ```
 
 ### メソッドの実装
@@ -236,18 +233,14 @@ export default {
 ```js
 components/TodoView.vue
 
-render(h) {
-  return (
-    <div>
-      <form>
-        <input />
-        <button type="submit">ADD</button>
-      </form>
+<div>
+	<form>
+		<input />
+		<button type="submit">ADD</button>
+	</form>
 
-      {/* 略 */}
-    </div>
-  )
-}
+	{/* 略 */}
+</div>
 ```
 
 `props` で受け取った関数をイベント検知して叩きます  
