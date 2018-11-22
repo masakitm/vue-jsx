@@ -1,6 +1,5 @@
 <script>
 export default {
-  functional: true,
   props: {
     todoData: {
       type: Array,
