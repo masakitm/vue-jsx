@@ -312,6 +312,6 @@ components / TodoView.vue
 責務ごとにコンポーネントを分けたり、`<style>`で css をつけたり、todo の 削除機能などは通常の vue.js 同様に試してみてください
 
 今回作成した内容は下記リポジトリへアップしています  
-ぜひご覧になってくださいね
+ぜひご覧になってくださいね  
 https://github.com/masakitm/vue-jsx/blob/master/components/TodoContainer.js  
 https://github.com/masakitm/vue-jsx/blob/master/components/TodoView.vue
