@@ -1,5 +1,9 @@
 # vue.js で jsx を始めよう 〜TODO アプリで学ぶ jsx〜
 
+## はじめに
+
+AsiaQuest 株式会社所属のフロントエンドエンジニアです。
+
 ## 対象読者
 
 vue.js の単一ファイルコンポーネントで開発したことがある人
@@ -13,7 +17,7 @@ React 書いてる気持ちになる
 
 ### jsx で vue を書くメリット
 
-みんな大好き vue.js、使ってますか？僕も好きです
+みんな大好き vue.js、使ってますか？僕も好きです  
 vue は富豪的なフレームワークです  
 独自の api が多く、いずれは rails や jquery と同じ道を辿るかも…という懸念があります
 
@@ -68,17 +72,13 @@ render 関数を使って div 要素を return することで、template 記法
 ```js
 components/TodoView.vue
 
-<script>
-export default {
-  render(h) {
-    return (
-      <div>
-        <h1>Todo</h1>
-      </div>
-    )
-  }
+render(h) {
+	return (
+		<div>
+			<h1>Todo</h1>
+		</div>
+	)
 }
-</script>
 ```
 
 そしてこの場合、 `<template>` タグがないので `.vue` ファイルにする必要もありません  
@@ -112,20 +112,18 @@ export default {
 ```js
 components / TodoView.vue
 
-export default {
-  render(h) {
-    return (
-      <div>
-        {this.todoData.length > 0 && (
-          <div>
-            <div>item found</div>
-          </div>
-        )}
+render(h) {
+	return (
+		<div>
+			{this.todoData.length > 0 && (
+				<div>
+					<div>item found</div>
+				</div>
+			)}
 
-        {this.todoData.length === 0 && <div>no item found</div>}
-      </div>
-    )
-  }
+			{this.todoData.length === 0 && <div>no item found</div>}
+		</div>
+	)
 }
 ```
 
@@ -170,16 +168,14 @@ export default {
 ```js
 components / TodoView.vue
 
-export default {
-  props: {
-    todoData: {
-      type: Array,
-      default: () => []
-    }
-  },
-  render(h) {
-    return <div>{/* 略 */}</div>
-  }
+props: {
+	todoData: {
+		type: Array,
+		default: () => []
+	}
+},
+render(h) {
+	return <div>{/* 略 */}</div>
 }
 ```
 
@@ -260,38 +256,36 @@ render(h) {
 ```js
 components / TodoView.vue
 
-export default {
-  props: {
-    todoData: {
-      type: Array,
-      default: () => []
-    },
-    handleInput: {
-      type: Function,
-      default: () => {}
-    },
-    handleSubmit: {
-      type: Function,
-      default: () => {}
-    }
-  },
-  render(h) {
-    return (
-      <div>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            this.handleSubmit()
-          }}
-        >
-          <input onKeyup={e => this.handleInput(e.target.value)} />
-          <button type="submit">ADD</button>
-        </form>
+props: {
+	todoData: {
+		type: Array,
+		default: () => []
+	},
+	handleInput: {
+		type: Function,
+		default: () => {}
+	},
+	handleSubmit: {
+		type: Function,
+		default: () => {}
+	}
+},
+render(h) {
+	return (
+		<div>
+			<form
+				onSubmit={e => {
+					e.preventDefault()
+					this.handleSubmit()
+				}}
+			>
+				<input onKeyup={e => this.handleInput(e.target.value)} />
+				<button type="submit">ADD</button>
+			</form>
 
-        {/* 略 */}
-      </div>
-    )
-  }
+			{/* 略 */}
+		</div>
+	)
 }
 ```
 
@@ -305,24 +299,14 @@ Todo 部分の view を作ります
 `todoData`をループして各要素ごとに`<div>{ name }</div>`を返すことで、`v-for`と同様の挙動を再現することができます
 
 ```js
-components/TodoView.vue
+components / TodoView.vue
 
-render(h) {
-  return (
+{
+  this.todoData.length > 0 && (
     <div>
-      {/* 略 */}
-
-      <div>
-        {this.todoData.length > 0 && (
-          <div>
-            {this.todoData.map(item => (
-              <div>{item.name}</div>
-            ))}
-          </div>
-        )}
-
-        {this.todoData.length === 0 && <div>no item found</div>}
-      </div>
+      {this.todoData.map(item => (
+        <div>{item.name}</div>
+      ))}
     </div>
   )
 }
@@ -333,5 +317,7 @@ render(h) {
 これでごく基本的な説明は終了です  
 責務ごとにコンポーネントを分けたり、`<style>`で css をつけたり、todo の 削除機能などは通常の vue.js 同様に試してみてください
 
-今回作成した内容は下記リポジトリへアップしています
-https://github.com/masakitm/vue-jsx
+今回作成した内容は下記リポジトリへアップしています  
+ぜひご覧になってくださいね
+https://github.com/masakitm/vue-jsx/blob/master/components/TodoContainer.js  
+https://github.com/masakitm/vue-jsx/blob/master/components/TodoView.vue
