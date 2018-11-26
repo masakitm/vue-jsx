@@ -13,7 +13,7 @@ jsx になじみがない人
 ## TL;DR
 
 記法は違えど感覚は `<template>` にかなり近い  
-React 書いてる気持ちになる  
+react 書いてる気持ちになる  
 賢い気持ちになる
 
 ### jsx で vue を書くメリット
@@ -67,7 +67,7 @@ export default {
 </script>
 ```
 
-render 関数を使って div 要素を return することで、template 記法に近い感覚で書けます
+render 関数を使って div 要素を return することで、template 記法に近い感覚で書けます  
 ※詳しくはこちら https://jp.vuejs.org/v2/guide/render-function.html
 
 複数行書く場合は jsx 部分を `()` で囲みます
@@ -321,6 +321,11 @@ components / TodoView.vue
   )
 }
 ```
+
+### class を使ったスタイリング
+
+`.vue` ファイルでは通常の vue と同様、`<style>`タグを使ったスタイリングが可能です  
+react とは異なり、属性名は`className`ではなく`class`表記になります
 
 ### おしまい
 
