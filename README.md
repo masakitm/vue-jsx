@@ -48,6 +48,8 @@ vue で jsx を使うパッケージが最初から同梱されているため�
 お馴染みの template 記法を jsx で書き直してみましょう
 
 ```html
+vue sample
+
 <template>
   <div>Todo</div>
 </template>
@@ -97,6 +99,8 @@ render(h) {
 これで `v-if` のような出し分けを再現できます
 
 ```html
+vue sample
+
 <template>
   <div>
     <div v-if="todoData.length > 0">
@@ -291,6 +295,18 @@ Todo 部分の view を作ります
 `v-for` を使わず、`map()` を使って実装します
 
 `todoData`をループして各要素ごとに`<div>{ name }</div>`を返すことで、`v-for`と同様の挙動を再現することができます
+
+```html
+vue sample
+
+<template>
+	<div v-if="todoData.length > 0">
+		<div v-for="item in todoData">
+			{{ item.name }}
+		</div>
+	</div>
+</template>
+```
 
 ```js
 components / TodoView.vue
