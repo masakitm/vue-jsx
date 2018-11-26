@@ -289,7 +289,7 @@ render(h) {
 
 これで `input` 入力時に `TodoContainer` の `data` を書き換え、`submit`時に todo を追加する部分が実装できました
 
-### Todo リストの View を作る
+### v-for を実装する
 
 Todo 部分の view を作ります
 `v-for` を使わず、`map()` を使って実装します
@@ -300,11 +300,11 @@ Todo 部分の view を作ります
 vue sample
 
 <template>
-	<div v-if="todoData.length > 0">
-		<div v-for="item in todoData">
-			{{ item.name }}
-		</div>
-	</div>
+  <div v-if="todoData.length > 0">
+    <div v-for="item in todoData">
+      {{ item.name }}
+    </div>
+  </div>
 </template>
 ```
 
