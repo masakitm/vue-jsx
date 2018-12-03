@@ -29,6 +29,7 @@ export default {
         done: false
       }
       this.todoData = this.todoData.concat(newItem)
+      this.tempText = ''
     }
   },
   render() {
@@ -37,6 +38,7 @@ export default {
         todoData={this.todoData}
         handleInput={this.updateTempText}
         handleSubmit={this.addItem}
+        tempText={this.tempText}
       />
     )
   }

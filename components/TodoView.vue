@@ -12,6 +12,10 @@ export default {
     handleSubmit: {
       type: Function,
       default: () => {}
+    },
+    tempText: {
+      type: String,
+      default: ''
     }
   },
   render(h) {
@@ -23,7 +27,11 @@ export default {
             this.handleSubmit()
           }}
         >
-          <input onKeyup={e => this.handleInput(e.target.value)} />
+          <input
+            onKeyup={e => this.handleInput(e.target.value)}
+            value={this.tempText}
+            placeholder="todo item here"
+          />
           <button type="submit">ADD</button>
         </form>
 
